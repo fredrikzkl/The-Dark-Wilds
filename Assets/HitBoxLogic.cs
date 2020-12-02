@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class HitBoxLogic : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit");
+        Debug.Log("Triggered with " + other.name);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collided with " + collision.ToString());
     }
 }

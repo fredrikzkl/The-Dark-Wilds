@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
+        
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         x = Input.GetAxis("Horizontal");
         z = Input.GetAxis("Vertical");
+
 
         //Attacks
         if (!handAnimator.GetBool("isAttacking") && Input.GetButtonDown("LightAttack"))
@@ -50,13 +52,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+          
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-
 
 
     void LightAttack()
@@ -73,4 +75,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+
+
 }

@@ -62,14 +62,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EnemyScript.cs" />
     <Compile Include="Assets\HitBoxLogic.cs" />
+    <Compile Include="Assets\MusicZoneTrigger.cs" />
     <Compile Include="Assets\Player\HandLogic.cs" />
+    <Compile Include="Assets\Player\Interact.cs" />
     <Compile Include="Assets\Player\MouseLook.cs" />
     <Compile Include="Assets\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\WorldScripts\LightingPreset.cs" />
-    <Compile Include="Assets\WorldScripts\SunLogic.cs" />
+    <Compile Include="Assets\Sounds\AudioManager.cs" />
+    <Compile Include="Assets\Sounds\Sound.cs" />
+    <Compile Include="Assets\UI_Dialoague\Billboard.cs" />
+    <Compile Include="Assets\UI_Dialoague\Dialogues\Dialogue.cs" />
+    <Compile Include="Assets\UI_Dialoague\Dialogues\DialogueManager.cs" />
+    <Compile Include="Assets\UI_Dialoague\Dialogues\NPCDialogue.cs" />
+    <Compile Include="Assets\UI_Dialoague\HealthBarHandler.cs" />
+    <Compile Include="Assets\WorldScripts\DayNight\LightingPreset.cs" />
+    <Compile Include="Assets\WorldScripts\DayNight\MoonLogic.cs" />
+    <Compile Include="Assets\WorldScripts\DayNight\SunLogic.cs" />
+    <Compile Include="Assets\WorldScripts\Duengon\DuengonDoorTrigger.cs" />
+    <Compile Include="Assets\WorldScripts\EndlessForestLoop.cs" />
+    <Compile Include="Assets\WorldScripts\EndlessForestTrigger.cs" />
+    <Compile Include="Assets\WorldScripts\WorldScript.cs" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Assets\Water\WaterShader.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Libraries\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TempProps\Hovl Studio\Procedural fire\Shaders\FireSphere.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\Libraries\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TempProps\Hovl Studio\Procedural fire\Demo scene\Readme.txt" />
+    <None Include="Assets\Libraries\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -604,6 +641,15 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>G:/Unity/TheDarkWilds/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>G:/Unity/TheDarkWilds/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>G:/Unity/TheDarkWilds/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>G:/Unity/TheDarkWilds/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>G:/Unity/TheDarkWilds/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -618,6 +664,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>G:/Unity/TheDarkWilds/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>G:/Unity/TheDarkWilds/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>G:/Unity/TheDarkWilds/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

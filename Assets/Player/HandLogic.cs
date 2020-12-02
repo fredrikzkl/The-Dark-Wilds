@@ -6,19 +6,35 @@ public class HandLogic : MonoBehaviour
 {
     //Refs
     private Animator handAnimator;
-    [SerializeField] private BoxCollider axeHitbox;
+    [SerializeField] BoxCollider axeHitBox;
+    bool detectLightAttacks;
 
+    List<Collider> damagedEnemies;
     
     void Start()
     {
+        damagedEnemies = new List<Collider>();
         handAnimator = GetComponent<Animator>();
-        axeHitbox.enabled = false;
+        detectLightAttacks = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (detectLightAttacks)
+        {
+            Collider[] colls = Physics.OverlapBox(axeHitBox.bounds.center, axeHitBox.bounds.extents, axeHitBox.transform.rotation);
+            foreach (var c in colls)
+            {
+                if (c.tag == "Enemy" && !damagedEnemies.Contains(c))
+                {
+                    damagedEnemies.Add(c);
+                    var enemyScript = c.GetComponent<EnemyScript>();
+                    enemyScript.Damage(20);
+                    Debug.Log("Hit " + c.name + "dealing 20 damage. Remaining: " + enemyScript.GetHp());
+                }
+            }
+        }
     }
 
 
@@ -26,13 +42,15 @@ public class HandLogic : MonoBehaviour
     //Blir kalt når slaget skal være 
     void LightAttackHitboxEnable()
     {
-        axeHitbox.enabled = true;
+        detectLightAttacks = true;
+        
     }
 
     //Blir kalt når slaget er ferdig
     void LightAttackHitBoxDisabled()
     {
-        axeHitbox.enabled = false;
+        detectLightAttacks = false;
+        damagedEnemies.Clear();
     }
 
     //Blir kalt når animasjonen er ferdig, og man kan gjøre nye moves
